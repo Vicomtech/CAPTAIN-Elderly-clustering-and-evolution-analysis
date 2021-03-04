@@ -1,0 +1,6 @@
+.idea/
+data/*.csv
+data/*.zip
+data/*.R
+data/*.xlsx
+env/
