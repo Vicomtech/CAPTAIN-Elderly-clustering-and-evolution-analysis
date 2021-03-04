@@ -51,7 +51,8 @@ def write():
     st.title(PAGE_EDA)
     if st.learning_mode:
         st.write(MAIN_DESCRIPTION)
-    st.info(PAPER_INFO)
+    if False:
+        st.info(PAPER_INFO)
     # Dataset
     st.subheader(HINT_USER_INPUT)
 
