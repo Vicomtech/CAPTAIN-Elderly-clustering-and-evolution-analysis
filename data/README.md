@@ -1,1 +1,0 @@
-Extract zip file located [here](https://vicomtech.app.box.com/folder/123265650833) into this folder.
