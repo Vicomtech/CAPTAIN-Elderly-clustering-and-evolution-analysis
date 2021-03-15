@@ -7,9 +7,6 @@ RUN python -m pip install --upgrade pip
 COPY requirements.txt .
 RUN pip install -r requirements.txt
 
-EXPOSE 8501/tcp
-
-
 COPY . /opt
 WORKDIR /opt
-CMD streamlit run main.py
+CMD streamlit run main.py --server.port $PORT
