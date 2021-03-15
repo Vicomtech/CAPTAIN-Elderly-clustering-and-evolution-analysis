@@ -179,71 +179,73 @@ def write():
             st.plotly_chart(fig_radar, use_container_width=True)
 
         # IMPROVEMENT
+        if st.checkbox('Continue to evolution study'):
+            # Second assessment
+            st.write(SECTION_IMPROVEMENT)
+            if st.learning_mode:
+                st.write(TEXT_SECOND_ASSESSMENT)
 
-        # Second assessment
-        st.write(SECTION_IMPROVEMENT)
-        if st.learning_mode:
-            st.write(TEXT_SECOND_ASSESSMENT)
+            # Improvement
 
-        # Improvement
+            # Parallel coordinates
+            if st.learning_mode:
+                st.write(TEXT_PARALLEL_COORDINATE)
 
-        # Parallel coordinates
-        if st.learning_mode:
-            st.write(TEXT_PARALLEL_COORDINATE)
-
-        df_differences = __build_df_differences(
-            df=df_first_assessment,
-            df_second_assessment=df_second_assessment,
-            weights_difference=weights_difference
-        )
-
-        fig_parallel = __create_parallel_coordinates(df_differences, k)
-        st.plotly_chart(fig_parallel, use_container_width=True)
-
-        # Progression
-        if st.learning_mode:
-            st.write(PROGRESSION_SUB_SECTION)
-            st.write(TEXT_PROGRESSION)
-            st.info(TIP_PROGRESSION)
-            st.write(TEXT_PROGRESSION_2)
-
-        param_col_layout_top = st.beta_columns(3)
-        param_col_layout_bottom = st.beta_columns(2)
-        with param_col_layout_top[0]:
-            select_cluster = st.selectbox(
-                TEXT_PROGRESSION_CLUSTER,
-                list(df_differences['Cluster'].unique()) + ['All']
+            df_differences = __build_df_differences(
+                df=df_first_assessment,
+                df_second_assessment=df_second_assessment,
+                weights_difference=weights_difference
             )
-        with param_col_layout_bottom[0]:
-            variable_to_show = st.selectbox(TEXT_PROGRESSION_FOLLOW_UP,
-                                            list(GLOBAL_FIELDS_PROGRESSION.keys()))
-        with param_col_layout_bottom[1]:
-            variable_to_color = st.selectbox(TEXT_PROGRESSION_IMPROVE,
-                                             list(GLOBAL_FIELDS.keys()))
 
-        with param_col_layout_top[2]:
-            group_by = st.selectbox("How to group close days",
-                                    ['mean', 'max', 'min', 'No grouping']
-                                    )
-        with param_col_layout_top[1]:
-            n_days = st.selectbox("Number of days to group",
-                                  [1, 3, 5, 7, 9], 3)
+            fig_parallel = __create_parallel_coordinates(df_differences, k)
+            st.plotly_chart(fig_parallel, use_container_width=True)
 
-        # center_color_in_0 = st.selectbox("I want to centre the color in 0 or progressive",
-        #                                  ['In 0', 'Progressive'], 0)
+            # Progression
+            if st.learning_mode:
+                st.write(PROGRESSION_SUB_SECTION)
+                st.write(TEXT_PROGRESSION)
+                st.info(TIP_PROGRESSION)
+                st.write(TEXT_PROGRESSION_2)
 
-        center_color_in_0 = 'In 0'
-        df_progression_cluster_reduced = __adapt_df_progression(df_differences, df_progression_reduced, select_cluster)
-        fig_progression_reduced = __create_progress_line_chart(
-            df_differences,
-            df_progression_cluster_reduced,
-            variable_to_color,
-            variable_to_show,
-            by=group_by,
-            n_days=n_days,
-            center_color_in_0=center_color_in_0
-        )
-        st.plotly_chart(fig_progression_reduced, use_container_width=True)
+            param_col_layout_top = st.beta_columns(3)
+            param_col_layout_bottom = st.beta_columns(2)
+            with param_col_layout_top[0]:
+                select_cluster = st.selectbox(
+                    TEXT_PROGRESSION_CLUSTER,
+                    list(df_differences['Cluster'].unique()) + ['All']
+                )
+            with param_col_layout_bottom[0]:
+                variable_to_show = st.selectbox(TEXT_PROGRESSION_FOLLOW_UP,
+                                                list(GLOBAL_FIELDS_PROGRESSION.keys()))
+            with param_col_layout_bottom[1]:
+                variable_to_color = st.selectbox(TEXT_PROGRESSION_IMPROVE,
+                                                 list(GLOBAL_FIELDS.keys()))
+
+            with param_col_layout_top[2]:
+                group_by = st.selectbox("How to group close days",
+                                        ['mean', 'max', 'min', 'No grouping']
+                                        )
+            with param_col_layout_top[1]:
+                n_days = st.selectbox("Number of days to group",
+                                      [1, 3, 5, 7, 9], 3)
+
+            # center_color_in_0 = st.selectbox("I want to centre the color in 0 or progressive",
+            #                                  ['In 0', 'Progressive'], 0)
+
+            center_color_in_0 = 'In 0'
+            df_progression_cluster_reduced = __adapt_df_progression(df_differences, 
+                                                                    df_progression_reduced, 
+                                                                    select_cluster)
+            fig_progression_reduced = __create_progress_line_chart(
+                df_differences,
+                df_progression_cluster_reduced,
+                variable_to_color,
+                variable_to_show,
+                by=group_by,
+                n_days=n_days,
+                center_color_in_0=center_color_in_0
+            )
+            st.plotly_chart(fig_progression_reduced, use_container_width=True)
 
 
 def __agglomerative_clustering(df_normal, weights):
