@@ -30,3 +30,8 @@ http://localhost:8501/
 
 #### Stop container
 > docker stop interactive_clustering
+
+### Public Access
+
+A publicly available version is running in the next url: 
+[https://captain-elderly-evolution.herokuapp.com/](https://captain-elderly-evolution.herokuapp.com/)
