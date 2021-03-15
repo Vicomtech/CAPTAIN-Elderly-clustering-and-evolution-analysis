@@ -1,8 +1,8 @@
 # interactive clustering
 
-This is the streamlit code.
-It is to let non expert users to create clusters, visualize the patterns of each cluster and see the evolution of the clusters the after stratification.
-It allows to give different weight to each parameter or group (nutrition, social, etc.)
+This web application allows non-expert users to create clusters, visualize their patterns and follow up the 
+evolution of those clusters after the stratification.
+It also allows final users to customize different weights to each parameter or group (nutrition, social, etc.)
 
 ## Launch up
 
@@ -29,6 +29,3 @@ http://localhost:8501/
 
 #### Stop container
 > docker stop interactive_clustering
-
-### The data is missing in git, just in case (Anonimity)
-Extract zip file located [here](https://vicomtech.app.box.com/folder/123265650833) into data folder.
