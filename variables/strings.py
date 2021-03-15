@@ -22,7 +22,9 @@ MAIN_TITLE = "Older adult population analysis in CAPTAIN"
 
 MAIN_DESCRIPTION = """
 The purpose of this app is to analyze the older adult population in the CAPTAIN system using interactive visualization
-techniques with the aim of providing insights that could support their carers' labour.
+techniques. It allows non-expert users to create clusters, visualize their patterns and follow up the evolution of those
+clusters after the stratification. It also allows final users to customize the relevance of every parameter or group
+(nutrition, social, physical, and cognitive).
 """
 
 MAIN_INFO = """

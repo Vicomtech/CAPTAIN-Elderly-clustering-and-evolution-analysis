@@ -233,8 +233,8 @@ def write():
             #                                  ['In 0', 'Progressive'], 0)
 
             center_color_in_0 = 'In 0'
-            df_progression_cluster_reduced = __adapt_df_progression(df_differences, 
-                                                                    df_progression_reduced, 
+            df_progression_cluster_reduced = __adapt_df_progression(df_differences,
+                                                                    df_progression_reduced,
                                                                     select_cluster)
             fig_progression_reduced = __create_progress_line_chart(
                 df_differences,
