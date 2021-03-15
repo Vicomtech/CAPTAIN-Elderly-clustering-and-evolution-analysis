@@ -1,8 +1,9 @@
 # interactive clustering
 
-This web application allows non-expert users to create clusters, visualize their patterns and follow up the 
-evolution of those clusters after the stratification.
-It also allows final users to customize the relevance of every parameter or group (nutrition, social, etc.)
+The purpose of this app is to analyze the older adult population in the CAPTAIN system using interactive visualization 
+techniques. It allows non-expert users to create clusters, visualize their patterns and follow up the evolution of 
+those clusters after the stratification. It also allows final users to customize the relevance of every parameter or 
+group (nutrition, social, physical, and cognitive).
 
 ## Launch up
 
