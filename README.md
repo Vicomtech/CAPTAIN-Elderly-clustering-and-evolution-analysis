@@ -2,7 +2,7 @@
 
 This web application allows non-expert users to create clusters, visualize their patterns and follow up the 
 evolution of those clusters after the stratification.
-It also allows final users to customize different weights to each parameter or group (nutrition, social, etc.)
+It also allows final users to customize the relevance of every parameter or group (nutrition, social, etc.)
 
 ## Launch up
 
