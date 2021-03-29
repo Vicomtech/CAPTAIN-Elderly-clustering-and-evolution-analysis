@@ -43,11 +43,13 @@ PAGE_EDA = "Step 1: Review assessment data"
 
 # TODO: Once the paper is accepted fill this information with link and its information
 PAPER_INFO = """
-There is further information in the paper presented in... (still to fill with the journal information)
-- Article: [Title] (https://www.mdpi.com/journal/ijerph/special_issues/active_healthy_aging)
- (whether it is accepted the paper link)
-- Special issue: [Active Healthy Aging](https://www.mdpi.com/journal/ijerph/special_issues/active_healthy_aging)
-- Journal: [MDPI](https://www.mdpi.com/)
+An exhaustive report has been made explaining the functioning and characteristics of this web-tool. In addition,
+ a **usability test** has been carried out in which we have analysed its capabilities and shortcomings.
+  All this has been submitted to a journal (**under revision**):
+- **Article**: [Web-tool to elderly clustering and evolution analysis] (https://www.mdpi.com/journal/ijerph/special_issues/active_healthy_aging)
+ (Currently this is the link to the special issue, if accepted the link to the article will be added.)
+- **Special issue**: [Active Healthy Aging](https://www.mdpi.com/journal/ijerph/special_issues/active_healthy_aging)
+- **Journal**: [MDPI](https://www.mdpi.com/)
 """
 
 PAGE_CLUSTER = "Step 2: Group users and study evolution"
