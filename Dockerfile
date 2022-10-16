@@ -3,9 +3,9 @@ LABEL maintainer="jkerexeta@vicomtech.org"
 LABEL maintainer="ralvarez@vicomtech.org"
 LABEL maintainer="aberistain@vicomtech.org"
 
-RUN python -m pip install --upgrade pip
+RUN python -m pip install --no-cache-dir --upgrade pip
 COPY requirements.txt .
-RUN pip install -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . /opt
 WORKDIR /opt
